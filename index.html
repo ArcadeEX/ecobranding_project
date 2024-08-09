@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco360 - Página de Bienvenida</title>
+    <link rel="stylesheet" href="styles_index.css">
+</head>
+<body>
+    <header class="header" id="blur_1">
+        <div class="menu container">
+            <a href="index.html">
+                <img class="logo" src="images_menu_index/logo_white.png" alt="">
+            </a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <div class="menu-icono" onclick="toggle()"><ion-icon name="reorder-three-outline"></ion-icon></div>
+            </label>
+        </div>
+    </header>
+
+    <main class="main" id="blur_2">
+        <div class="images-bar">
+            <input id="slide1" type="radio" name="group" checked>
+            <input id="slide2" type="radio" name="group">
+            <input id="slide3" type="radio" name="group">
+            <input id="slide4" type="radio" name="group">
+            <input id="slide5" type="radio" name="group">
+            <div class="dots">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+                <label for="slide5"></label>
+            </div>
+            <div class="slider">
+                <div class="slide" for="slide1" style="--img:url('images_bar_index/1.jpg')">
+                    <div class="slide-txt">
+                        <h2>Slide 01</h2>
+                    </div>
+                </div>
+                <div class="slide" for="slide2" style="--img:url('images_bar_index/2.jpg')">
+                    <div class="slide-txt">
+                        <h2>Slide 02</h2>
+                    </div>
+                </div>
+                <div class="slide" for="slide3" style="--img:url('images_bar_index/3.jpg')">
+                    <div class="slide-txt">
+                        <h2>Slide 03</h2>
+                    </div>
+                </div>
+                <div class="slide" for="slide4" style="--img:url('images_bar_index/4.jpg')">
+                    <div class="slide-txt">
+                        <h2>Slide 04</h2>
+                    </div>
+                </div>
+                <div class="slide" for="slide5" style="--img:url('images_bar_index/5.jpg')">
+                    <div class="slide-txt">
+                        <h2>Slide 05</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="navigation-content container" id="popup">
+        <div class="navigation-menu">
+            <div class="interruptor"><ion-icon name="grid-outline"></ion-icon></div>
+            <li style="--i:0;">
+                <a href="home.html"><ion-icon name="home-outline"></ion-icon></a>
+            </li>
+            <li style="--i:1;">
+                <a href="about.html"><ion-icon name="people-outline"></ion-icon></a>
+            </li>
+            <li style="--i:2;">
+                <a href="portfolio.html"><ion-icon name="briefcase-outline"></ion-icon></a>
+            </li>
+            <li style="--i:3;">
+                <a href="contact.html"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+            </li>
+            <li style="--i:4;">
+                <a class="back" onclick="toggle()"><ion-icon name="arrow-undo-outline"></ion-icon></a>
+            </li>
+        </div>
+    </div>
+
+    <div id="loader" class="load-page">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <span class="loading">Cargando...</span>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        function toggle(){
+            var blur_1 = document.getElementById('blur_1');
+            blur_1.classList.toggle('active')
+            var blur_2 = document.getElementById('blur_2');
+            blur_2.classList.toggle('active')
+            var popup = document.getElementById('popup');
+            popup.classList.toggle('active')
+        }
+    </script>
+
+    <script>
+        let interruptor = document.querySelector('.interruptor');
+        let navigation_menu = document.querySelector('.navigation-menu');
+        interruptor.onclick = function(){
+            navigation_menu.classList.toggle('active')
+        }
+    </script>
+
+    <script>
+        window.addEventListener("load", function(){
+            document.getElementById("loader").classList.toggle("load-page_2")
+        })
+    </script>
+</body>
+</html>
